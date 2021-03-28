@@ -96,7 +96,7 @@ build() {
   log "BUILD $CONTAINER_NAME"
   DOCKERFILE=$(pwd)/Dockerfile
   # Build Container
-  docker build --rm --no-cache -f $DOCKERFILE -t $CONTAINER_NAME .
+  docker build --rm --force-rm --no-cache -f $DOCKERFILE -t $CONTAINER_NAME .
 
   if [ $? -eq 0 ]; then
     log "OK"
